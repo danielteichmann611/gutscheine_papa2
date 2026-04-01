@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { text-align: center; }
+        img { border: 1px solid black; }
+        
+        #send {
+            background-color: lightgray;
+            padding: 25px;
+            margin: 40px auto;
+            max-width: 420px;
+            border-radius: 10px;
+            border: 2px solid #444;
+        }
+        
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+    <title>Gutscheine</title>
+</head>
+<body>
+    <h1>Gutscheine für Vater Manfred</h1>
+    <a href="erklärung.html" target="_self" title="Zu der Erklärung">Erklärung</a>
+
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px;">
+        
+        <figure style="margin: 0;">
+            <a href="https://gasthof-lagler.at/wp-content/uploads/2026/02/Februar-18.2.pdf" target="_blank" title="Zur Speisekarte vom Lagler">
+                <img src="img/beuschel.jpg" alt="Beuschel" style="max-width: 380px; width: 100%; height: auto;">
+            </a>
+            <figcaption>Beuschel-Suppe beim Lagler</figcaption>
+        </figure>
+
+        <figure style="margin: 0;">
+            <a href="https://gasthof-lagler.at/wp-content/uploads/2026/02/Februar-18.2.pdf" target="_blank" title="Zur Speisekarte vom Lagler">
+                <img src="img/bier.jpg" alt="Bier" style="max-width: 380px; width: 100%; height: auto;">
+            </a>
+            <figcaption>Bier beim Lagler</figcaption>
+        </figure>
+        
+    </div>
+
+    <br><br>
+
+    <form action="https://formsubmit.co/daniel.teichmann611@gmail.com" method="POST">
+        <div id="send">
+            <p>Gutschein wählen:</p>
+            <input list="gutscheine" type="text" name="Gutschein" placeholder="z.B. Beuschl-Suppe" required>
+            <datalist id="gutscheine">
+                <option value="Beuschl-Suppe"> 
+                <option value="Bier"> 
+            </datalist>
+
+            <br><br>
+
+            <label for="datum">Einlöse-Datum eingeben:</label><br>
+            <input type="date" id="datum" name="Einlöse-Datum" required>
+
+            <br><br>
+
+            <!-- Wichtige versteckte Felder -->
+            <input type="hidden" name="_subject" value="Neuer Gutschein für Manfred!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://deine-seite.de/danke.html"> <!-- optional: ändere auf deine Dankeseite oder lass weg -->
+
+            <button type="submit">Absenden</button>
+        </div>
+    </form>
+
+</body>
+</html>
